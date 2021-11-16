@@ -1,3 +1,9 @@
+% Run SEM2D over phase velocity maps for ambient noise
+%
+% Loop through all stations and simulate a wavefield generated from an impulse
+% at each station
+%
+% % % % % % % % % % % % % % % % % % % % % %
 % SEM2D	applies the Spectral Element Method
 % to solve the 2D SH wave equation, 
 % with stress free boundary conditions,
