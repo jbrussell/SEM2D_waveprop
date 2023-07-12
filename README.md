@@ -2,4 +2,4 @@ Propagate waves through a 2-D velocity model using the spectral element method. 
 
 The phase delay field for a given source is estimated via cross-correlation at each point on the map.
 
-![](wavefield_A01_12.7764s.gif)
+![](./_resources/wavefield_A01_12.7764s.gif)
