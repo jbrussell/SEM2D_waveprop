@@ -273,8 +273,9 @@ for it=1:NT,
 %     Plot2dSnapshot(x,y,v,OUTindx,[-0.5 0.5]);
     Plot2dSnapshot(x,y,avd,OUTindx);
     hold on
-    plot(OUTxseis,OUTyseis,'^k',Fx,Fy,'*k','linewidth',2)
-    set(gca,'linewidth',1.5,'fontsize',15);
+    plot(OUTxseis,OUTyseis,'^k','MarkerFaceColor','w','markersize',10,'linewidth',1);
+    plot(Fx,Fy,'pk','MarkerFaceColor','y','linewidth',1,'markersize',20)
+    set(gca,'linewidth',1.5,'fontsize',15,'layer','top');
     colormap(bluewhitered)
     hold off
 %     xlim([75 225])
@@ -307,10 +308,10 @@ OUTvs_pts = vs_glob(OUTiglob_pts);
 figure(3);
 Plot2dSnapshot(x,y,vs_glob,OUTindx,[min(vs_glob)*0.99 max(vs_glob)*1.01]);
 hold on
-plot(OUTxseis,OUTyseis,'^k','MarkerFaceColor','w');
+plot(OUTxseis,OUTyseis,'^k','MarkerFaceColor','w','markersize',10,'linewidth',1);
 hold off
-colormap(flipud(jet));
-title('Model')
+colormap(tomo_cmap(100));
+title('Vs Model (km/s)');
 % xlim([75 225])
 % [Y,X] = meshgrid(ynode,xnode);
 % contourf(X,Y,mu_mat,'edgecolor','none');
