@@ -104,6 +104,21 @@ for iper = per_ind
     F = scatteredInterpolant(x_gr(:),y_gr(:),VS(:));
     VS = F(X,Y);
     
+    figure(99); clf; box on; hold on;
+    set(gcf,'color','w');
+    contourf(X,Y,VS,100,'LineStyle','none');
+    plot(OUTxseis,OUTyseis,'^k','MarkerFaceColor','w','linewidth',1,'markersize',12);
+    cb = colorbar;
+    cb.LineWidth = 1.5;
+    ylabel(cb,'Phase Velocity (km/s)');
+    set(gca,'fontsize',16,'linewidth',1.5,'layer','top');
+    colormap(tomo_cmap(100));
+    xlabel('X (km)');
+    ylabel('Y (km)');
+    title([num2str(Tperiods(iper)),' s']);
+    save2pdf([figpath,'/PhaseVelocityMap_',num2str(Tperiods(iper)),'s','.pdf'],99,250);
+    drawnow
+    
     for ista = 1:length(OUTxseis)
         clear run
         disp(['Working on ',num2str(Tperiods(iper)),'s: STA ',sta.name{ista},' ',num2str(ista),'/',num2str(length(OUTxseis))])
